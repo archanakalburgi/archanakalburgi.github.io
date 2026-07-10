@@ -1,5 +1,5 @@
-.bundle
 .DS_Store
-_posts/.DS_Store
-/images/.DS_Store
-
+_site/
+.jekyll-cache/
+.bundle/
+vendor/

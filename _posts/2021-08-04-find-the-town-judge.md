@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Find the town judge"
+title: "Find the Town Judge"
 date: 2021-08-05
+description: Walking through the UMPIRE method to identify the judge from trust relationships.
+tags: [algorithms, leetcode, graphs]
 ---
 Here is an interesting problem that I enjoyed solving using UMPIRE method.
 

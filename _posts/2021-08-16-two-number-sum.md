@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Two number sum"
+title: "Two Number Sum"
 date: 2021-08-16
+description: A classic array problem that surfaces the time-vs-space complexity tradeoff.
+tags: [algorithms, leetcode, arrays]
 ---
 
 Following is one of the many array questions and is a good example that shows the time and space complexity trade off 

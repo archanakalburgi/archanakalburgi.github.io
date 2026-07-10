@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
+
+<article class="post">
+  <div>
+    <header class="post__header">
+      <div class="post__breadcrumb"><a href="{{ '/posts.html' | relative_url }}">← All posts</a></div>
+      <h1 class="post__title">{{ page.title }}</h1>
+      <div class="post__meta">
+        {%- if page.date -%}
+          <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %e, %Y" }}</time>
+          <span class="sep">·</span>
+        {%- endif -%}
+        <span>{% include reading-time.html content=content %}</span>
+      </div>
+    </header>
+
+    <div class="prose">
+      {{ content }}
+    </div>
+
+    <footer class="post__footer">
+      <div class="post__footer-nav">
+        <a href="{{ '/posts/' | relative_url }}">← all posts</a>
+        <span>rss: <a href="{{ '/feed.xml' | relative_url }}">/feed.xml</a></span>
+      </div>
+
+      {%- assign related = '' | split: '' -%}
+      {%- if page.tags -%}
+        {%- for p in site.posts -%}
+          {%- if p.url != page.url -%}
+            {%- for t in p.tags -%}
+              {%- if page.tags contains t -%}
+                {%- assign related = related | push: p -%}
+                {%- break -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+          {%- if related.size >= 3 -%}{%- break -%}{%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+
+      {%- if related.size > 0 -%}
+      <div class="related">
+        <div class="related__title"><span class="prompt">$</span>related</div>
+        <ul>
+          {%- for r in related -%}
+            <li>
+              <span class="related__date">{{ r.date | date: "%Y·%m·%d" }}</span>
+              <a href="{{ r.url | relative_url }}">{{ r.title }}</a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      {%- endif -%}
+    </footer>
+  </div>
+
+  {% include toc.html content=content %}
+</article>

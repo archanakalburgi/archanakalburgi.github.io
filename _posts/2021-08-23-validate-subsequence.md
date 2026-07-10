@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Validate subsequence"
+title: "Validate Subsequence"
 date: 2021-08-23
+description: A simple framework for approaching array problems — what to try first.
+tags: [algorithms, leetcode, arrays]
 ---
 
 Solving this problem helped me understand the order of techniques I can explore to arrive at the solution for an array problem. 

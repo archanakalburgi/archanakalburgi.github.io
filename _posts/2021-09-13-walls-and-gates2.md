@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Walls and gates - omg to om!"
+title: "Walls and Gates — From OGM to OM"
 date: 2021-09-13
+description: A follow-up walkthrough simplifying the original walls-and-gates solution.
+tags: [algorithms, leetcode, graphs, bfs]
 ---
 
 <p align="center">

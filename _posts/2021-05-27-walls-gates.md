@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Walls and gates - Breadth first search"
+title: "Walls and Gates — Breadth-First Search"
 date: 2021-09-11
+description: Using BFS to compute the distance from every empty room to its nearest gate.
+tags: [algorithms, leetcode, graphs, bfs]
 ---
 
 <p align="center">

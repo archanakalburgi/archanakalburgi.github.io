@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Traverse a matrix to perform flood fill"
+title: "Traversing a Matrix — Flood Fill"
 date: 2021-08-15
+description: Matrix traversal with neighbor validation — the classic flood-fill pattern.
+tags: [algorithms, leetcode, matrix, dfs]
 ---
 
 Solving the following problem helped me better understand how to traverse a matrix and how to get the valid neighbors of a cell in the matrix

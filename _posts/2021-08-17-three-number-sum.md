@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Three number sum"
+title: "Three Number Sum"
 date: 2021-08-17
+description: Another array problem demonstrating tradeoffs between brute force and pointer-based solutions.
+tags: [algorithms, leetcode, arrays]
 ---
 
 Another example that shows the time and space complexity trade off

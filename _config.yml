@@ -1,20 +1,44 @@
-title: Archana Kalburgi
+title: archana kalburgi
+tagline: ml engineer · notes from the terminal
 author: Archana Kalburgi
+email: archanakalburgi@gmail.com
+description: >-
+  Writing about machine learning, systems, and the messy middle
+  where ideas meet data.
 
-description: > # this means to ignore newlines until "baseurl:"
+url: "https://archanakalburgi.github.io"
+baseurl: ""
 
-# social links
-# twitter_username: your-twitter-handle # DO NOT include the @ character, or else the build will fail!
+permalink: /:year/:month/:day/:title.html
+
+show_excerpts: true
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter: rouge
+  toc_levels: 2..3
+  auto_ids: true
+
+sass:
+  style: compressed
 
 plugins:
   - jekyll-feed
-  - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-sitemap
 
-github_username: archanakalburgi # DO NOT include the @ character, or else the build will fail!
-linkedin_username: archana-kalburgi
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      toc: true
 
-background_image:   /images/bg.jpg
-
-show_excerpts: false # set to false to remove excerpts on the homepage
-theme: minima 
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules
+  - vendor
+  - .jekyll-cache

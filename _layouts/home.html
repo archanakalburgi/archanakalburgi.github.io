@@ -2,37 +2,40 @@
 layout: default
 ---
 
-<div class="home">
-    {%- if page.title -%}
-        <h1 class="page-heading">{{ page.title }}</h1>
-    {%- endif -%}
+{% include hero.html %}
 
-    <div class="hero">
-        <img class="feature-img" src="{{/images/bg.jpg }}" />
-    </div>
+<section class="section reveal" aria-labelledby="latest-heading">
+  <div class="section__head">
+    <span id="latest-heading">Latest writing</span>
+    <a href="{{ '/posts/' | relative_url }}">see all →</a>
+  </div>
+  <ul class="post-list">
+    {%- assign latest = site.posts | slice: 0, 3 -%}
+    {%- for post in latest -%}
+      {% include post-card.html post=post %}
+    {%- endfor -%}
+  </ul>
+</section>
 
-    {{ content }}
+<section class="section reveal" aria-labelledby="projects-heading">
+  <div class="section__head">
+    <span id="projects-heading">Projects</span>
+    <a href="{{ '/projects/' | relative_url }}">all projects →</a>
+  </div>
+  <div class="project-grid">
+    {%- for proj in site.data.projects -%}
+      {%- if proj.featured -%}
+      <a class="project-card" href="{{ proj.url }}"{% unless proj.url contains site.url %} target="_blank" rel="noopener"{% endunless %}>
+        <div class="project-card__name">{{ proj.name }}</div>
+        <p class="project-card__blurb">{{ proj.blurb }}</p>
+        <div class="tags">
+          {%- for t in proj.tags -%}<span class="tag">{{ t }}</span>{%- endfor -%}
+        </div>
+        <span class="project-card__cta">view →</span>
+      </a>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+</section>
 
-    {%- if site.posts.size > 0 -%}
-        <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-        <ul class="post-list">
-            {%- for post in site.posts -%}
-            <li>
-                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-                <span class="post-meta">{{ post.date | date: date_format }}</span>
-                <h3>
-                    <a class="post-link" href="{{ post.url | relative_url }}">
-                        {{ post.title | escape }}
-                    </a>
-                </h3>
-                {%- if site.show_excerpts -%}
-                    {{ post.excerpt }}
-                {%- endif -%}
-            </li>
-            {%- endfor -%}
-        </ul>
-
-        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
-    {%- endif -%}
-
-</div>
+{{ content }}

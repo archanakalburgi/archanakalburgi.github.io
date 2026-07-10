@@ -1,7 +1,9 @@
 ---
 layout: post
-title: "Kth largest value of binary search tree"
+title: "Kth Largest Value in a Binary Search Tree"
 date: 2021-08-14
+description: Using in-order traversal of a BST to pull out the kth largest value.
+tags: [algorithms, leetcode, trees]
 ---
 The following problem helped me understand that in-order traversal of a binary search tree yields a sorted array.
 <p align="center">
