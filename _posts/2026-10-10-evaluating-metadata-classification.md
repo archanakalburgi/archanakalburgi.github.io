@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Evaluating metadata classification for a retrieval pipeline
-date: 2026-07-04 10:00:00 +0000
+date: 2026-10-10 10:00:00 +0000
 description: "Retrieval was tuned, so I measured the next stage: how reliably a local model labels each document. Across input windows, more than half the document types stayed wrong, and the chunking setting turned out to be quietly controlling what the classifier could see."
 image: /assets/images/classification/eval-loop.png
 ---
